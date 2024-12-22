@@ -1,23 +1,81 @@
 :root {
-    --foreground-rgb: 0, 0, 0;
-    --background-rgb: 255, 255, 255;
-    --secondary-color: #3d3d3d;
+    --viewport-h: 100vh;
+    --vh: 1vh;
+    --v-spacing: 4px;
+    --header-h: 28px;
+    --header-pv: 14px;
+    --color-black: #000000;
+    --color-grey-dark: #333333;
+    --color-background: #F4F4F4;
+    --breakpoint-xxs: 320px;
+    --breakpoint-xs: 375px;
+    --breakpoint-s: 480px;
+    --breakpoint-m: 768px;
+    --breakpoint-l: 1004px;
+    --breakpoint-vl: 1260px;
+    --breakpoint-xl: 1440px;
+    --breakpoint-xxl: 1900px;
+    --breakpoint-xxxl: 2540px;
 }
 
 body {
-    color: white;
-    background: black;
+    height: var(--viewport-h);
+    color: var(--color-grey-dark);
+    background: var(--color-background);
     font-family:  'Consolas', 'Courier New', Courier, 'Lucida Console', 'Monaco', 'Andale Mono', monospace;
     width: 100vw;
     overflow: hidden;
-}
-
-h1, h2 {
-    padding: 0;
     margin: 0;
 }
 
-.intro {
+a {
+    all: unset;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+header {
+    position: fixed;
+    z-index: 10;
+    top: 20px;
+    width: 100%;
+    place-items: center;
+    padding: var(--header-pv) 0;
+    transform: translateY(0);
+    pointer-events: none;
+    transition: transform 1s ease 1s;
+}
+
+header p {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.social {
     position: absolute;
-    top: 0;
+    left: 0;
+    bottom: 54px;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 5%;
+    padding: 10px 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 100000;
+}
+
+.link-row {
+    display: flex;
+    flex-direction: row;
+    height: 42px;
+    color: #262626;
+    gap: 1rem;
+}
+
+.link-row svg{
+    height: 100%;
+    width: 100%;
+    fill: var(--color-grey-dark);
 }
