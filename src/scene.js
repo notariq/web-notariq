@@ -60,7 +60,7 @@ loader.load(
 
 // Animation loop
 function animate(controls) {
-  requestAnimationFrame(() => (animate(controls));
+  requestAnimationFrame(() => (animate(controls)));
   if (controls) {controls.update();}
   renderer.render(scene, camera);
 };
